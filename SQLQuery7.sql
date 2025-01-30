@@ -39,11 +39,11 @@ STARTDATE DATE NOT NULL
 
 INSERT INTO [SKYBARREL].[DEPARTMENTS]([DEPARTMENTID],[DEPARTMENTNAME])
                          VALUES(1,              'MARKETING'    ),
-						       (2,              'FINANCE'      ),
-							   (3,              'ENGINEERING'  ),
-							   (4,              'RISK MANAGEMENT'),
-							   (5,              'SALES'        );
-
+			       (2,              'FINANCE'      ),
+			       (3,              'ENGINEERING'  ),   
+			       (4,              'RISK MANAGEMENT'),  
+			       (5,              'SALES'        );
+ 
 
 
 ---INSERT VALUES INTO EMPLOYEES TABLE
