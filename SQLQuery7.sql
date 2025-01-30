@@ -159,19 +159,19 @@ INSERT INTO[SKYBARREL].[INVESTMENTS]([INVESTMENTID],  [INVESTMENTNAME],  [INVEST
 ----EMPLOYEE ADDITION
 ---- POSITIONS FOR THE NEW EMPLOYEES IN FINANCE DEPARTMENT 
 ----WERE NOT PROVIDED SO WE ASSIGNED TASKS TO THEM.
-INSERT INTO [SKYBARREL].[EMPLOYEE]([EMPLOYEEID],   FIRSTNAME,   LASTNAME,   DEPARTMENTID,         POSITION,              SALARY)
-                     VALUES (12,               'ALEX',     'BAKER',       2,       'JUNIOR FINANCIAL ANALYST',    70000.00),
-							(13,             'RACHEAL',      'KIM',       2,        'FINANCIAL PLANNER',          85000.00),
-							(14,              'DANIEL',      'GREEN',     2,         'FINANCIAL MANAGER',         90000.00);
+INSERT INTO [SKYBARREL].[EMPLOYEE]([EMPLOYEEID],   FIRSTNAME,   LASTNAME,   DEPARTMENTID,       POSITION,               SALARY)
+                     VALUES      (12,               'ALEX',     'BAKER',       2,       'JUNIOR FINANCIAL ANALYST',    70000.00),
+			         (13,             'RACHEAL',      'KIM',       2,        'FINANCIAL PLANNER',          85000.00),  
+			         (14,              'DANIEL',      'GREEN',     2,         'FINANCIAL MANAGER',         90000.00);
 
 
 
 
 ----MULTIPLE NEW INVESTMENT
 INSERT INTO [SKYBARREL].[INVESTMENTS](INVESTMENTID,INVESTMENTNAME,INVESTMENTTYPE,DEPARTMENTID,AMOUNTINVESTED,STARTDATE)
-                         VALUES(11,          'SKYFUND Y',      'BOND',         2,        1500000.00,   '2025-03-01'),
-						       (12,          'SKYFUND Z',      'STOCK',        1,         800000.00,   '2025-03-15'),
-							   (13,          'SKYFUND W',     'REAL ESTATE',   4,         3000000.00,  '2025-04-01');
+                                VALUES(11,          'SKYFUND Y',      'BOND',         2,        1500000.00,   '2025-03-01'),
+			              (12,          'SKYFUND Z',      'STOCK',        1,         800000.00,   '2025-03-15'),
+			              (13,          'SKYFUND W',     'REAL ESTATE',   4,         3000000.00,  '2025-04-01');
 
 ---EMPLOYEE HAS LEFT THE COMPANY
 DELETE FROM [SKYBARREL].[EMPLOYEE]
