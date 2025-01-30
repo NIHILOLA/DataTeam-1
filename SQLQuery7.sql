@@ -32,52 +32,6 @@ STARTDATE DATE NOT NULL
 );
 
 
-
---- TASK 2: POPULATE THE TABLES BY INSERTING VALUES
-
----INSERT VALUES IN DEPARTMENTS TABLE
-
-INSERT INTO [SKYBARREL].[DEPARTMENTS]([DEPARTMENTID],[DEPARTMENTNAME])
-                         VALUES(1,              'MARKETING'    ),
-			       (2,              'FINANCE'      ),
-			       (3,              'ENGINEERING'  ),   
-			       (4,              'RISK MANAGEMENT'),  
-			       (5,              'SALES'        );
- 
-
-
----INSERT VALUES INTO EMPLOYEES TABLE
- INSERT INTO [SKYBARREL].[EMPLOYEE]([EMPLOYEEID],   [FIRSTNAME],   [LASTNAME],  [DEPARTMENTID],   [POSITION],     [SALARY])
-VALUES
-(1,                'JOHN',         'DOE',         1,       'MARKETING MANAGER',      120000.00),
-(2,                'JANE',         'SMITH',       2,       'FINANCIAL ANALYST',       95000.00),
-(3,               'ROBERT',       'JOHNSON',      3,       'SOFTWARE ENGINEER',      105000.00),
-(4,                'EMILY',        'DAVIS',       1,   'SENIOR MARKETING STRATEGIST', 88000.00),
-(5,               'MICHAEL',       'BROWN',       4,        'RISK ANALYST',           85000.00),
-(6,                'SARAH',         'WILSON',     2,       'SENIOR ACCOUNTANT',      115000.00),
-(7,                'DAVID',         'LEE',        3,        'SYSTEMS ARCHITECT',     125000.00),
-(8,               'RACHAEL',        'KIM',        5,        'SALES MANAGER',         110000.00),
-(9,               'DANIEL',         'GREEN',      2,         'INVESTMENT MANAGER',   130000.00),
-(10,               'ALEX',          'BAKER',      4,    'RISK MANAGEMENT CONSULTANT', 94000.00);
-
-
-
----INSERT VALUES INTO INVESTMENTS TABLE
-
-INSERT INTO [SKYBARREL].[INVESTMENTS]([INVESTMENTID],[INVESTMENTNAME],[INVESTMENTTYPE],[DEPARTMENTID],[AMOUNTINVESTED],[STARTDATE])
-VALUES
-(1,      'SKYFUND ALPHA',       'EQUITY',      1,        2000000.00,       '2025-01-10'  ), 
-(2,      'SKYFUND BETA',         'BOND',       2,        1500000.00,       '2025-02-01'  ),
-(3,      'SKYFUND DELTA',      'REAL ESTATE',  3,        3000000.00,       '2025-03-01'  ),
-(4,      'SKYFUND OMEGA',         'STOCK',     4,         500000.00,       '2025-01-20'  ),
-(5,      'SKYFUND GAMMA',       'REAL ESTATE', 2,        1200000.00,       '2025-04-15'  ),
-(6,      'SKYFUND ZETA',          'BOND',      3,        2500000.00,       '2024-02-28'  ),
-(7,      'SKYFUND THETA',         'EQUITY',    1,        3500000.00,       '2025-03-10'  ),
-(8,      'SKYFUND KAPPA',       'REAL ESTATE', 4,         800000.00,       '2025-04-05'  ),
-(9,      'SKYFUND IOTA',           'STOCK',    5,        2000000.00,       '2025-05-01'  );
-
-
-
 ---CREATING PRIMARY KEYS
 ALTER TABLE [SKYBARREL].[EMPLOYEE]
 ADD CONSTRAINT PK_EMPLOYEE_EMPLOYEEID PRIMARY KEY ([EMPLOYEEID]);
@@ -95,6 +49,59 @@ ADD CONSTRAINT FK_DEPT_DEPTID FOREIGN KEY ([DEPARTMENTID]) REFERENCES [SKYBARREL
 
 ALTER TABLE[SKYBARREL].[INVESTMENTS]
 ADD CONSTRAINT FK_DEPT_DEPTARTMENTID FOREIGN KEY ([DEPARTMENTID]) REFERENCES [SKYBARREL].[DEPARTMENTS]([DEPARTMENTID]);
+
+
+
+--- TASK 2: POPULATE THE TABLES BY INSERTING VALUES
+
+---INSERT VALUES IN DEPARTMENTS TABLE
+
+INSERT INTO [SKYBARREL].[DEPARTMENTS]([DEPARTMENTID],[DEPARTMENTNAME])
+                         VALUES(1,              'MARKETING'    ),
+						       (2,              'FINANCE'      ),
+							   (3,              'ENGINEERING'  ),
+							   (4,              'RISK MANAGEMENT'),
+							   (5,              'SALES'        );
+
+
+SELECT*
+ FROM[SKYBARREL].[DEPARTMENTS]
+
+
+---INSERT VALUES INTO EMPLOYEES TABLE
+ INSERT INTO [SKYBARREL].[EMPLOYEE]([EMPLOYEEID],   [FIRSTNAME],   [LASTNAME],  [DEPARTMENTID],   [POSITION],     [SALARY])
+VALUES
+(1,                'JOHN',         'DOE',         1,       'MARKETING MANAGER',      120000.00),
+(2,                'JANE',         'SMITH',       2,       'FINANCIAL ANALYST',       95000.00),
+(3,               'ROBERT',       'JOHNSON',      3,       'SOFTWARE ENGINEER',      105000.00),
+(4,                'EMILY',        'DAVIS',       1,   'SENIOR MARKETING STRATEGIST', 88000.00),
+(5,               'MICHAEL',       'BROWN',       4,        'RISK ANALYST',           85000.00),
+(6,                'SARAH',         'WILSON',     2,       'SENIOR ACCOUNTANT',      115000.00),
+(7,                'DAVID',         'LEE',        3,        'SYSTEMS ARCHITECT',     125000.00),
+(8,               'RACHAEL',        'KIM',        5,        'SALES MANAGER',         110000.00),
+(9,               'DANIEL',         'GREEN',      2,         'INVESTMENT MANAGER',   130000.00),
+(10,               'ALEX',          'BAKER',      4,    'RISK MANAGEMENT CONSULTANT', 94000.00);
+
+SELECT*
+FROM[SKYBARREL].[EMPLOYEE]
+
+---INSERT VALUES INTO INVESTMENTS TABLE
+
+INSERT INTO [SKYBARREL].[INVESTMENTS]([INVESTMENTID],[INVESTMENTNAME],[INVESTMENTTYPE],[DEPARTMENTID],[AMOUNTINVESTED],[STARTDATE])
+VALUES
+(1,      'SKYFUND ALPHA',       'EQUITY',      1,        2000000.00,       '2025-01-10'  ), 
+(2,      'SKYFUND BETA',         'BOND',       2,        1500000.00,       '2025-02-01'  ),
+(3,      'SKYFUND DELTA',      'REAL ESTATE',  3,        3000000.00,       '2025-03-01'  ),
+(4,      'SKYFUND OMEGA',         'STOCK',     4,         500000.00,       '2025-01-20'  ),
+(5,      'SKYFUND GAMMA',       'REAL ESTATE', 2,        1200000.00,       '2025-04-15'  ),
+(6,      'SKYFUND ZETA',          'BOND',      3,        2500000.00,       '2024-02-28'  ),
+(7,      'SKYFUND THETA',         'EQUITY',    1,        3500000.00,       '2025-03-10'  ),
+(8,      'SKYFUND KAPPA',       'REAL ESTATE', 4,         800000.00,       '2025-04-05'  ),
+(9,      'SKYFUND IOTA',           'STOCK',    5,        2000000.00,       '2025-05-01'  );
+
+SELECT*
+FROM [SKYBARREL].[INVESTMENTS]
+
 
 
 ---TASK 3.1:  UPDATE DATA
@@ -122,7 +129,7 @@ UPDATE [SKYBARREL].[EMPLOYEE]
 SET[DEPARTMENTID]=3
 WHERE [EMPLOYEEID]=4
 
-----PERFORMANCE BONUS
+---- ONE-TIME PERFORMANCE BONUS
 ALTER TABLE[SKYBARREL].[EMPLOYEE]
 ADD BONUS DECIMAL(10,2) NULL
 
@@ -144,7 +151,7 @@ WHERE EMPLOYEEID=6
 ---NEW EMPLOYEE RECORD
 ----EMPLOYEEID FOR THE NEW EMPLOYEE WASN'T PROVIDED, SO WE ASSUMED IT TO BE 11.
 INSERT INTO [SKYBARREL].[EMPLOYEE]([EMPLOYEEID],     [FIRSTNAME],     [LASTNAME],     [DEPARTMENTID],       [POSITION],            [SALARY])
-                      VALUES(11,                 'JOHN',        'THOMPSON',           1,       'SENIOR MARKETING STRATEGIST',   95000.00)
+                      VALUES(11,                      'JOHN',        'THOMPSON',           1,       'SENIOR MARKETING STRATEGIST',   95000.00)
 
 
 
@@ -159,19 +166,19 @@ INSERT INTO[SKYBARREL].[INVESTMENTS]([INVESTMENTID],  [INVESTMENTNAME],  [INVEST
 ----EMPLOYEE ADDITION
 ---- POSITIONS FOR THE NEW EMPLOYEES IN FINANCE DEPARTMENT 
 ----WERE NOT PROVIDED SO WE ASSIGNED TASKS TO THEM.
-INSERT INTO [SKYBARREL].[EMPLOYEE]([EMPLOYEEID],   FIRSTNAME,   LASTNAME,   DEPARTMENTID,       POSITION,               SALARY)
-                     VALUES      (12,               'ALEX',     'BAKER',       2,       'JUNIOR FINANCIAL ANALYST',    70000.00),
-			         (13,             'RACHEAL',      'KIM',       2,        'FINANCIAL PLANNER',          85000.00),  
-			         (14,              'DANIEL',      'GREEN',     2,         'FINANCIAL MANAGER',         90000.00);
+INSERT INTO [SKYBARREL].[EMPLOYEE]([EMPLOYEEID],   FIRSTNAME,   LASTNAME,   DEPARTMENTID,         POSITION,              SALARY)
+                     VALUES (12,               'ALEX',     'BAKER',       2,       'JUNIOR FINANCIAL ANALYST',    70000.00),
+							(13,             'RACHEAL',      'KIM',       2,        'FINANCIAL PLANNER',          85000.00),
+							(14,              'DANIEL',      'GREEN',     2,         'FINANCIAL MANAGER',         90000.00);
 
 
 
 
 ----MULTIPLE NEW INVESTMENT
 INSERT INTO [SKYBARREL].[INVESTMENTS](INVESTMENTID,INVESTMENTNAME,INVESTMENTTYPE,DEPARTMENTID,AMOUNTINVESTED,STARTDATE)
-                                VALUES(11,          'SKYFUND Y',      'BOND',         2,        1500000.00,   '2025-03-01'),
-			              (12,          'SKYFUND Z',      'STOCK',        1,         800000.00,   '2025-03-15'),
-			              (13,          'SKYFUND W',     'REAL ESTATE',   4,         3000000.00,  '2025-04-01');
+                         VALUES(11,          'SKYFUND Y',      'BOND',         2,        1500000.00,   '2025-03-01'),
+						       (12,          'SKYFUND Z',      'STOCK',        1,         800000.00,   '2025-03-15'),
+							   (13,          'SKYFUND W',     'REAL ESTATE',   4,         3000000.00,  '2025-04-01');
 
 ---EMPLOYEE HAS LEFT THE COMPANY
 DELETE FROM [SKYBARREL].[EMPLOYEE]
@@ -189,7 +196,8 @@ WHERE EMPLOYEEID=8
 DELETE FROM SKYBARREL.DEPARTMENTS
 WHERE DEPARTMENTID=5
 
-
+SELECT*
+FROM [SKYBARREL].[DEPARTMENTS]
 
 	-----	RETRIEVE EMPLOYEES AND DEPARTMENTS 
 
